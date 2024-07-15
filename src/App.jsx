@@ -22,7 +22,7 @@ function App() {
   });
   // this useeffect to send an axios request to the end point
   useEffect(()=>{
-    axios.get("http://localhost/MY_PROJECTS/watches_project/product.php").then((res)=>{
+    axios.get("http://localhost/MY_PROJECTS/electronic_project/product.php").then((res)=>{
       window.sessionStorage.setItem("data",JSON.stringify(res.data))
       setAllProduct(res.data)
     })

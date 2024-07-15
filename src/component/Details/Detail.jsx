@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import { FaCartShopping } from "react-icons/fa6";
-import curren from "../../assets/curren1.png"
+import monitor from "../../assets/monitor3.png"
 import { useNavigate, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { Data } from '../../context/Data';
@@ -42,7 +42,7 @@ const Detail = () => {
       Form.append("qte",qte)
       Form.append("id",parseInt(clicked.Id))
       Form.append("price",parseInt(clicked.Price)*parseInt(qte))
-      axios.post("http://localhost/MY_PROJECTS/watches_project/Order.php",Form).then((res)=>{
+      axios.post("http://localhost/MY_PROJECTS/electronic_project/Order.php",Form).then((res)=>{
         toast.success("you Order is succesfully sent!! wait a call from our support ")
         navigate("/")
       })
@@ -52,28 +52,28 @@ const Detail = () => {
     <>
       <section className='mt-20 w-[95%]  relative left-1/2 -translate-x-1/2 grid grid-cols-1 md:grid-cols-2 place-items-center gap-2'>
         <div className='w-full self-start flex justify-center'>
-          <img src={`http://localhost/MY_PROJECTS/watches_project/assets/${clicked.Type}/${clicked.Pic}`} alt="pic" className='w-[40%] h-[400px] mix-blend-multiply object-cover'/>
+          <img src={`http://localhost/MY_PROJECTS/electronic_project/assets/${clicked.Pic}`} alt="pic" className=' h-[400px] mix-blend-multiply object-cover'/>
         </div>
         <div className='flex flex-col gap-5 items-center md:items-start w-[90%] md:w-full'>
           <nav className='font-bold self-stretch flex flex-col gap-3  relative bef'>
-            <h1 >{clicked.Nom}</h1>
-            <h1>{clicked.Price} Moroccan Dirham</h1>
+            <h1  className='text-black text-[25px]'>{clicked.Nom}</h1>
+            <h1 className='text-black text-[25px]'>{clicked.Price} Moroccan Dirham</h1>
           </nav>
           <ul className='font-bold list-disc self-stretch'>
-            <li>Livraison Gratuite</li>
-            <li>Livrée avec packaging complet</li>
+            <li>Free Shipping</li>
+            <li>Delivered with complete packaging</li>
             <li>Délais de livraison environ 2 jours</li>
           </ul>
           <div>
-            <p className=' leading-relaxed'>{clicked.Description}</p>
+            <p className='leading-relaxed text-black'>{clicked.Description}</p>
           </div>
-          <p className='text-sm text-zinc-500'>Toutes les montres Curren bénéficient d'une garantie d'un an.</p>
+          <p className='text-sm text-zinc-500'>All Curren products come with a one-year warranty</p>
           {
             parseInt(clicked.qte) !== 0 ?
             <div className='flex items-center flex-col md:flex-row gap-4'>
-            <input type="number" id='qte' className='w-[150px] h-10 rounded-md border border-amber-900 pl-2' defaultValue={1} min={1}/>
-            <button className='w-[250px] h-12 text-sm rounded-md sh bg-white text-amber-900 duration-500 transition-all hover:text-white hover:bg-amber-900 flex items-center justify-center gap-3' onClick={()=>setisvisible(true)}>PourSuiver La Commande</button>
-          </div> : <><p className='text-amber-900 font-bold'>Rupture du stock</p></>
+            <input type="number" id='qte' className='w-[150px] h-10 rounded-md border border-blue-900 pl-2' defaultValue={1} min={1}/>
+            <button className='w-[250px] h-12 text-sm rounded-md sh bg-white text-blue-900 duration-500 transition-all hover:text-white hover:bg-blue-900 flex items-center justify-center gap-3' onClick={()=>setisvisible(true)}>to track the order.</button>
+          </div> : <><p className='text-blue-900 font-bold'>Rupture du stock</p></>
           }
          {
           isvisible ? 
@@ -82,7 +82,7 @@ const Detail = () => {
             <TextField name='email' label="Email" type="email" variant="standard" onChange={Change}/>
             <TextField name='carte' label="Carte National" type="text" variant="standard" onChange={Change}/>
             <TextField name='tel' label="Tel" type="tel" variant="standard" onChange={Change}/>
-          <button className='w-[200px] self-center h-12 text-sm rounded-md sh bg-white text-amber-900 duration-500 transition-all hover:text-white hover:bg-amber-900 flex items-center justify-center gap-3'><FaCartShopping /> Shop Now</button>
+          <button className='w-[200px] self-center h-12 text-sm rounded-md sh bg-white text-blue-900 duration-500 transition-all hover:text-white hover:bg-blue-900 flex items-center justify-center gap-3'><FaCartShopping /> Shop Now</button>
         </form>
         : <></>
          }

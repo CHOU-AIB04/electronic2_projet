@@ -1,21 +1,21 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import cam1 from "../../assets/campany/AMD-Logo.png"
+import cam2 from "../../assets/campany/asus.png"
+import cam3 from "../../assets/campany/intel.png"
+import cam4 from "../../assets/campany/Msi-Logo.jpg"
+import cam5 from "../../assets/campany/sapphire-logo.png"
+import cam6 from "../../assets/campany/zotac.png"
+import case1 from '../../assets/case2.jpg'
+import case2 from '../../assets/case2.png'
+import case3 from '../../assets/case3.jpg'
 // Import Swiper styles
+import monitor1 from '../../assets/monitor.webp'
+import monitor3 from '../../assets/monitor3.png'
 import 'swiper/css';
-import curren1 from "../../assets/curren1.png"
-import rolex2 from "../../assets/rolex2.webp"
-import philip5 from "../../assets/philip4.webp"
-import philip1 from "../../assets/philipe1.png"
-import rolex4 from "../../assets/rolex4.png"
-import pic2 from "../../assets/philipe2.jpeg"
-import rolex_logo from "../../assets/logo/rolex_logo.webp"
-import curren from "../../assets/logo/curren.png"
-import hublot from "../../assets/logo/hublot.webp"
-import philip from "../../assets/logo/philip.jpg"
+
+
 import { ImPriceTags } from "react-icons/im";
-import inhand from "../../assets/inhand.webp"
-import onehand from "../../assets/onehand.webp"
-import { GoArrowUpRight } from "react-icons/go";
 import { useEffect } from 'react';
 import { useState } from 'react';
 const Home = () => {
@@ -42,103 +42,73 @@ const Home = () => {
   return (
     <>
     {/* the first section */}
-    <section className='mt-20 w-[95%] lg:w-[90%] relative left-1/2 -translate-x-1/2 flex justify-center items-center '>
-      <h1 className='text-[25px] sm:text-[55px] lg:text-[75px] font-bold '>SMART WATCHES FACILIATE YOUR EVERY ACTIVITY.</h1>
+    <section id="home">
+        <div className="container ml-10 md:ml-20 space-y-3">
+            <h5 className="white"><span>NEW </span> ARRIVALS</h5>
+            <h1 className='text-[23px] md:text-[25px]'>Best Price <span> This Year</span></h1>
+            <p className='w-4/5 md:w-full'>Easy and simple PC parts describtion for PC building setups & configiration<br/>
+                including most of pc parts with the best price.</p>
+            <button> Shop Now</button>
+        </div>
     </section>
-    {/* the watches section that contain slider */}
-    <section className='mt-20 w-[90%] h-96 mb-10 relative left-1/2 -translate-x-1/2 sh'>
-      <Swiper 
-        spaceBetween={50}
-        slidesPerView={slide}
-        className="h-full cursor-pointer"
-        >
-        <SwiperSlide className='sh transition-all duration-300 hover:scale-90'>
-          <h1 className='w-[80px] h-7 text-white bg-amber-900 rounded-md flex justify-center items-center mt-1 ml-1'>Curren</h1>
-          <div className='w-full h-full flex justify-center'>
-            <img src={curren1} alt="pic" className='object-cover mix-blend-multiply'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className='sh transition-all duration-300 hover:scale-90'>
-          <h1 className='w-[80px] h-7 text-white bg-amber-900 rounded-md flex justify-center items-center mt-1 ml-1'>Rolex</h1>
-          <div className='w-full h-full flex justify-center'>
-            <img src={rolex2} alt="pic" className='object-cover mix-blend-multiply'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className='sh transition-all duration-300 hover:scale-90'>
-          <h1 className='w-[80px] h-7 text-white bg-amber-900 rounded-md flex justify-center items-center mt-1 ml-1'>Philip</h1>
-          <div className='w-full h-full flex justify-center'>
-            <img src={philip5} alt="pic" className='object-cover mix-blend-multiply'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className='sh transition-all duration-300 hover:scale-90'>
-          <h1 className='w-[80px] h-7 text-white bg-amber-900 rounded-md flex justify-center items-center mt-1 ml-1'>Philip</h1>
-          <div className='w-full h-full flex justify-center'>
-            <img src={philip1} alt="pic" className='object-cover mix-blend-multiply'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className='sh transition-all duration-300 hover:scale-90'>
-          <h1 className='w-[80px] h-7 text-white bg-amber-900 rounded-md flex justify-center items-center mt-1 ml-1'>Rolex4
-          </h1>
-          <div className='w-full h-full flex justify-center'>
-            <img src={rolex4} alt="pic" className='object-cover mix-blend-multiply'/>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-    </section>
+ 
     {/* the section that contain the companies logo */}
     <section className='mt-20 w-[90%] h-auto mb-10 relative left-1/2 -translate-x-1/2'>
-      <div className='w-full h-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'>
+      <div className='w-full h-[80%] grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6'>
           <div className='flex items-center justify-center'>
-            <img src={rolex_logo} alt="logo" className ="w-[150px] object-cover"/>
+            <img src={cam1} alt="logo" className ="w-[120px] object-cover"/>
           </div>
           <div className='flex items-center justify-center'>
-            <img src={curren} alt="logo" className ="w-[150px] object-cover"/>
+            <img src={cam2} alt="logo" className ="w-[120px] object-cover"/>
           </div>
           <div className='flex items-center justify-center'>
-            <img src={hublot} alt="logo" className ="w-[150px] object-cover"/>
+            <img src={cam3} alt="logo" className ="w-[120px] object-cover"/>
           </div>
           <div className='flex items-center justify-center'>
-            <img src={philip} alt="logo" className ="w-[150px] object-cover"/>
+            <img src={cam4} alt="logo" className ="w-[120px] object-cover"/>
+          </div>
+          <div className='flex items-center justify-center'>
+            <img src={cam5} alt="logo" className ="w-[120px] object-cover"/>
+          </div>
+          <div className='flex items-center justify-center'>
+            <img src={cam6} alt="logo" className ="w-[120px] object-cover"/>
           </div>
       </div>
     </section>
     {/*  the latest watches section*/}
     <section className='mt-20 w-[90%] h-auto mb-10 relative left-1/2 -translate-x-1/2'>
-      <h1 className='text-[20px] sm:text-[40px] lg:text-[60px] font-bold text-center'>DISCOVER THE LATEST WATCH.</h1>
+      <h1 className='text-[20px] sm:text-[40px] lg:text-[60px] font-bold text-center text-black'>DISCOVER THE LATEST PRODUCT.</h1>
       <div className='h-auto grid grid-cols-1 md:grid-cols-3 mt-4 place-items-center gap-5 md:gap-0'>
         <div>
-          <img src={pic2} alt="watch" className='w-auto'/>
+          <img src={monitor1} alt="watch" className='w-auto'/>
         </div>
         <div className='self-center flex flex-col items-center gap-3'>
-          <ImPriceTags size={40} className="text-amber-900"/>
-          <p className='w-[90%] font-bold text-[25px] text-center'>Discover Your New Favorite Our Best Sellers Sale</p>
-          <h1 className='font-bold text-[40px] text-amber-900'>50% Off</h1>
-          <p className='text-[20px]'>Our All New Arrivals</p>
+          <ImPriceTags size={40} className="text-blue-900"/>
+          <p className='w-[90%] font-bold text-[25px] text-center text-black'>Discover Your New Favorite Our Best Sellers Sale</p>
+          <h1 className='font-bold text-[40px] text-blue-900'>50% Off</h1>
+          <p className='text-[20px] text-black'>Our All New Arrivals</p>
         </div>
         <div>
-          <img src={inhand} alt="watch" />
+          <img src={monitor3} alt="watch" />
         </div>
       </div>
     </section>
-    {/* the  brand section*/}
-    <section className='mt-20 w-[90%] h-auto mb-10 relative left-1/2 -translate-x-1/2 space-y-3'>
-      <h1 className='text-[20px] sm:text-[40px] lg:text-[60px] font-bold'>OUR BRAND SELECTION.</h1>
-      <div>
-          <img src={onehand} alt="pic" />
-      </div>
-      <div className='h-16 flex items-center justify-between pl-5 pr-5 sh rounded-md transition-all duration-500 hover:text-amber-900 hover:bg-black'>
-        <p className='font-bold text-[20px]'>Rolex</p>
-        <GoArrowUpRight size={20}/>
-      </div>
-      <div className='h-16 flex items-center justify-between pl-5 pr-5 sh rounded-md transition-all duration-500 hover:text-amber-900 hover:bg-black'>
-        <p className='font-bold text-[20px]'>Phillip</p>
-        <GoArrowUpRight size={20}/>
-      </div>
-      <div className='h-16 flex items-center justify-between pl-5 pr-5 sh rounded-md transition-all duration-500 hover:text-amber-900 hover:bg-black'>
-        <p className='font-bold text-[20px]'>Curren</p>
-        <GoArrowUpRight size={20}/>
-      </div>
+    {/* the  last section*/}
+    <section className='h-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-1 w-[90%] relative left-1/2 -translate-x-1/2'>
+        <div className='w-full relative'>
+          <h2 className='absolute top-1/2 -translate-y-1/2 text-white font-bold w-full text-center'>Extreme Offers</h2>
+          <img src={case1} alt="case1" className='w-full h-full' />
+        </div>
+        <div className='w-full relative'>
+          <h2 className='absolute top-1/2 -translate-y-1/2 text-white font-bold w-full text-center'>Highest Quality</h2>
+          <img src={case2} alt="case1" className='w-full h-full' />
+        </div>
+        <div className='w-full relative'>
+          <h2 className='absolute top-1/2 -translate-y-1/2 text-white font-bold w-full text-center'>Up to 50% Disconts</h2>
+          <img src={case3} alt="case1" className='w-full h-full' />
+        </div>
     </section>
+ 
     </>
   )
 }
