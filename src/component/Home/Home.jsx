@@ -1,20 +1,14 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import cam1 from "../../assets/campany/AMD-Logo.png"
-import cam2 from "../../assets/campany/asus.png"
-import cam3 from "../../assets/campany/intel.png"
-import cam4 from "../../assets/campany/Msi-Logo.jpg"
-import cam5 from "../../assets/campany/sapphire-logo.png"
-import cam6 from "../../assets/campany/zotac.png"
-import case1 from '../../assets/case2.jpg'
-import case2 from '../../assets/case2.png'
-import case3 from '../../assets/case3.jpg'
-// Import Swiper styles
-import monitor1 from '../../assets/monitor.webp'
-import monitor3 from '../../assets/monitor3.png'
 import 'swiper/css';
-
-
+// mace import
+import prod1 from "../../assets/product/prod1.png"
+import prod2 from "../../assets/product/prod2.jpg"
+import prod3 from "../../assets/product/prod3.jpeg"
+import prod4 from "../../assets/product/prod4.jpg"
+import prod5 from "../../assets/product/prod5.jpg"
+import apple from "../../assets/apple.png"
+import airpod from "../../assets/product/airpod.webp"
 import { ImPriceTags } from "react-icons/im";
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -42,71 +36,83 @@ const Home = () => {
   return (
     <>
     {/* the first section */}
-    <section id="home">
-        <div className="container ml-10 md:ml-20 space-y-3">
-            <h5 className="white"><span>NEW </span> ARRIVALS</h5>
-            <h1 className='text-[23px] md:text-[25px]'>Best Price <span> This Year</span></h1>
-            <p className='w-4/5 md:w-full'>Easy and simple PC parts describtion for PC building setups & configiration<br/>
-                including most of pc parts with the best price.</p>
-            <button> Shop Now</button>
-        </div>
-    </section>
+    <div className=" h-[500px] w-full relative">
+
+      <div className="w-full h-full">
+          <img src={prod3} alt="" className='w-full h-full'/>
+      </div>
+      <div className='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 space-y-3 w-4/5 text-center'>
+          <h2 className='text-[50px] font-bold '>IPhone</h2>
+          <h3 className='text-[20px]'>New camera. New design. Newphoria</h3>
+      </div>
+    </div>
  
-    {/* the section that contain the companies logo */}
-    <section className='mt-20 w-[90%] h-auto mb-10 relative left-1/2 -translate-x-1/2'>
-      <div className='w-full h-[80%] grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6'>
-          <div className='flex items-center justify-center'>
-            <img src={cam1} alt="logo" className ="w-[120px] object-cover"/>
-          </div>
-          <div className='flex items-center justify-center'>
-            <img src={cam2} alt="logo" className ="w-[120px] object-cover"/>
-          </div>
-          <div className='flex items-center justify-center'>
-            <img src={cam3} alt="logo" className ="w-[120px] object-cover"/>
-          </div>
-          <div className='flex items-center justify-center'>
-            <img src={cam4} alt="logo" className ="w-[120px] object-cover"/>
-          </div>
-          <div className='flex items-center justify-center'>
-            <img src={cam5} alt="logo" className ="w-[120px] object-cover"/>
-          </div>
-          <div className='flex items-center justify-center'>
-            <img src={cam6} alt="logo" className ="w-[120px] object-cover"/>
-          </div>
+    <article className='w-[95%] relative left-1/2 -translate-x-1/2 grid grid-cols-1 md:grid-cols-2 gap-2 mt-10'>
+        <section className='w-full h-full relative rounded-md sh overflow-hidden'>
+            <img src={prod2} alt="" className='w-full h-full object-cover'/>
+            <div className=' absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2 text-white space-y-3 w-full text-center'>
+                <h1 className=' font-bold text-[30px] text-yellow-700'>WATCH</h1>
+                <p className='text-[20px]'>SERIES 9</p>
+                <h6 className='text-yellow-700 text-[20px]'>Smarter. Brighter. Mightier</h6>
+            </div>
+        </section>
+        <section className='w-full h-full relative rounded-md sh overflow-hidden'>
+            <img src={prod5} alt=""  className='w-full h-full object-cover'/>
+            <div className='absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2 text-white space-y-3 w-full text-center'>
+                <h1 className='font-bold text-[30px] text-yellow-700'>iPhone 15 Pro</h1>
+                <p className='text-[20px]'>Titanium. So strong. So sectionght. So pro</p>
+            </div>
+        </section>
+        <section className='w-full h-full relative rounded-md sh overflow-hidden'>
+            <img src={prod1} alt="" className='w-full h-full object-cover' />   
+            <div className='absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2 text-white space-y-3 w-full text-center'>
+              <h1 className='font-bold text-[30px] text-yellow-700 '>MacBook Pro</h1>
+              <p className='text-[20px]'>Mind-Blowing. Head-turning.</p>
+            </div>
+        </section>
+        <section className='w-full h-full relative rounded-md sh overflow-hidden'>
+            <img src={prod4} alt="" className='w-full h-full object-cover'/>
+            <div className='absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2 text-white space-y-3 w-full text-center'>
+              <h1 className='font-bold text-[30px] text-yellow-700'>Watch Pro</h1>
+              <p className='text-[20px]'>Adaptive Audio. Now Playing</p>
+              </div>
+        </section>
+    </article>
+    {/* another section */}
+    <section className="feature relative top-10">
+      <div className="section__container flex justify-around items-center flex-col md:flex-row">
+        <div className="feature__image">
+          <img src={apple} alt="feature" className=''/>
+        </div>
+        <div className="feature__content">
+          <h2 className="section__header text-[40px] font-bold textsh"> FEATURES</h2>
+          <ul>
+            <li>Warranty and Support</li>
+            <li>Ecosystem Integration </li>
+            <li>High-Quality Build and Design</li>
+            <li>Performance and Efficiency</li>
+            <li>Regular Software Updates</li>
+          </ul>
+        </div>
       </div>
     </section>
-    {/*  the latest watches section*/}
-    <section className='mt-20 w-[90%] h-auto mb-10 relative left-1/2 -translate-x-1/2'>
+     {/*  the latest watches section*/}
+    <section className='mt-28 w-[90%] h-auto mb-10 relative left-1/2 -translate-x-1/2'>
       <h1 className='text-[20px] sm:text-[40px] lg:text-[60px] font-bold text-center text-black'>DISCOVER THE LATEST PRODUCT.</h1>
       <div className='h-auto grid grid-cols-1 md:grid-cols-3 mt-4 place-items-center gap-5 md:gap-0'>
         <div>
-          <img src={monitor1} alt="watch" className='w-auto'/>
+          <img src={apple} alt="watch" className='w-auto'/>
         </div>
         <div className='self-center flex flex-col items-center gap-3'>
-          <ImPriceTags size={40} className="text-blue-900"/>
+          <ImPriceTags size={40} className="text-yellow-700"/>
           <p className='w-[90%] font-bold text-[25px] text-center text-black'>Discover Your New Favorite Our Best Sellers Sale</p>
-          <h1 className='font-bold text-[40px] text-blue-900'>50% Off</h1>
+          <h1 className='font-bold text-[40px] text-yellow-700'>50% Off</h1>
           <p className='text-[20px] text-black'>Our All New Arrivals</p>
         </div>
         <div>
-          <img src={monitor3} alt="watch" />
+          <img src={airpod} alt="watch" />
         </div>
       </div>
-    </section>
-    {/* the  last section*/}
-    <section className='h-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-1 w-[90%] relative left-1/2 -translate-x-1/2'>
-        <div className='w-full relative'>
-          <h2 className='absolute top-1/2 -translate-y-1/2 text-white font-bold w-full text-center'>Extreme Offers</h2>
-          <img src={case1} alt="case1" className='w-full h-full' />
-        </div>
-        <div className='w-full relative'>
-          <h2 className='absolute top-1/2 -translate-y-1/2 text-white font-bold w-full text-center'>Highest Quality</h2>
-          <img src={case2} alt="case1" className='w-full h-full' />
-        </div>
-        <div className='w-full relative'>
-          <h2 className='absolute top-1/2 -translate-y-1/2 text-white font-bold w-full text-center'>Up to 50% Disconts</h2>
-          <img src={case3} alt="case1" className='w-full h-full' />
-        </div>
     </section>
  
     </>

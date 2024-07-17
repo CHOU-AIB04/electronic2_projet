@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import { FaCartShopping } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
-import cat from "../../assets/wallpaper4.jpg"
+import cat from "../../assets/wallpaper.webp"
 import monitor from "../../assets/monitor3.png"
 import { Data } from '../../context/Data';
 const Categorie = () => {
@@ -16,17 +16,17 @@ const Categorie = () => {
     // a useeffect to do a filter 
   useEffect(()=>{
     if (active === 1) {
-      const filt = AllProduct.filter((prod)=>prod.Type === "monitor")
+      const filt = AllProduct.filter((prod)=>prod.Type === "phone")
       setFilter(filt)
     }else if(active === 2){
-      const filt = AllProduct.filter((prod)=>prod.Type === "ram")
+      const filt = AllProduct.filter((prod)=>prod.Type === "airpod")
       setFilter(filt)
     }else if(active === 3){
-      const filt = AllProduct.filter((prod)=>prod.Type === "setup")
+      const filt = AllProduct.filter((prod)=>prod.Type === "mac")
       setFilter(filt)
     }
     else if(active === 4){
-        const filt = AllProduct.filter((prod)=>prod.Type === "gpu")
+        const filt = AllProduct.filter((prod)=>prod.Type === "smart")
         setFilter(filt)
     }else{
       setFilter(AllProduct)
@@ -41,11 +41,11 @@ const Categorie = () => {
     </section>
     <section className='mt-20 w-[90%] relative left-1/2 -translate-x-1/2 flex justify-center'>
           <ul className='flex justify-between w-[90%] sm:w-[80%] lg:w-[65%] font-bold text-[20px]'>
-            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 1 ? "aft text-blue-800" : <></>}`} onClick={()=>Active(1)}>Monitor</li>
-            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 2 ? "aft text-blue-800" : <></>}`} onClick={()=>Active(2)}>Ram</li>
-            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 3 ? "aft text-blue-800" : <></>}`} onClick={()=>Active(3)}>Setup</li>
-            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 4 ? "aft text-blue-800" : <></>}`} onClick={()=>Active(4)}>Gpu</li>
-            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 5 ? "aft text-blue-800" : <></>}`} onClick={()=>Active(5)}>All</li>
+            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 1 ? "aft text-yellow-800" : <></>}`} onClick={()=>Active(1)}>Iphone</li>
+            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 2 ? "aft text-yellow-800" : <></>}`} onClick={()=>Active(2)}>Air Pods</li>
+            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 3 ? "aft text-yellow-800" : <></>}`} onClick={()=>Active(3)}>Mac</li>
+            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 4 ? "aft text-yellow-800" : <></>}`} onClick={()=>Active(4)}>Smart Watch</li>
+            <li className={`relative duration-500 transition-all cursor-pointer text-sm md:text-[18px] ${active === 5 ? "aft text-yellow-800" : <></>}`} onClick={()=>Active(5)}>All</li>
           </ul>
     </section>
     {
@@ -59,15 +59,15 @@ const Categorie = () => {
               <nav key={parseInt(watch.Id)} className='h-[450px] w-[250px]  rounded-md flex flex-col gap-5 pb-2 relative'>
                  
                   <NavLink to={`/ProductDetails/${parseInt(watch.Id)}`} className='h-[300px] flex justify-center items-center' onClick={()=>scrollTo({top:0,behavior : "smooth"})}>
-                      <img src={`http://localhost/MY_PROJECTS/electronic_project/assets/${watch.Pic}`} alt="pic" className=' h-[200px] object-cover duration-500 transition-all hover:scale-110 cursor-pointer mix-blend-multiply'/>
+                      <img src={`http://localhost/MY_PROJECTS/electronic_project2/assets/${watch.Pic}`} alt="pic" className=' h-[150px] object-cover duration-500 transition-all hover:scale-110 cursor-pointer mix-blend-multiply'/>
                   </NavLink>
-                  <p className='w-[50%] h-[45px] rounded-sm self-center insh bg-white-900 text-sm flex justify-center items-center text-blue-900 '>{watch.Type}</p>
+                  <p className='w-[50%] h-[45px] rounded-sm self-center insh bg-white-900 text-sm flex justify-center items-center text-yellow-800 '>{watch.Type}</p>
                   <div className='flex gap-3 flex-col items-center'>
                     <h1 className='font-bold text-[18px] text-black'>{watch.Nom}</h1>
-                    <p className='font-bold text-[20px] text-blue-900'>{watch.Price} MAD</p>
+                    <p className='font-bold text-[20px] text-yellow-800'>{watch.Price} MAD</p>
                   </div>
                 <NavLink to={`/ProductDetails/${parseInt(watch.Id)}`} className="self-center">
-                  <button className='w-[170px] h-10 text-sm rounded-md sh bg-white text-blue-900 duration-500 transition-all hover:text-white hover:bg-blue-900 flex items-center justify-center gap-3' onClick={()=>scrollTo({top:0,behavior : "smooth"})}><FaCartShopping size={20}/> Shop Now</button>
+                  <button className='w-[170px] h-10 text-sm rounded-md sh bg-white text-yellow-800 duration-500 transition-all hover:text-white hover:bg-yellow-800 flex items-center justify-center gap-3' onClick={()=>scrollTo({top:0,behavior : "smooth"})}><FaCartShopping size={20}/> Shop Now</button>
                 </NavLink>
               </nav>
             </>
@@ -75,7 +75,7 @@ const Categorie = () => {
         })
       } 
     
-    </section> : <><p className='text-center font-bold text-blue-900 text-[25px] mt-10'>No Product in this Catégorie Yet !!</p></>
+    </section> : <><p className='text-center font-bold text-yellow-800 text-[25px] mt-10'>No Product in this Catégorie Yet !!</p></>
     }
   </>
   )
